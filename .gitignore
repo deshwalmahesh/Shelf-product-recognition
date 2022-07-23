@@ -1,0 +1,8 @@
+*.npy
+*.npz
+*.bin
+*.pth
+*.jpeg
+*.jpg
+*.JPEG
+*.JPG
