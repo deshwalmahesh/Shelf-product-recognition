@@ -4,7 +4,21 @@ See `Product_detection.ipynb` for the whole end to end process.
 # Approaches:
 
 There are two main ways of doing this. 
-1. Using Traditional CV: Implemented 7 different methods. See  `traditional_image_similarity.py`
+1. Using Traditional CV: Implemented 8 different methods . See  `traditional_image_similarity.py`
+```
+[
+'multi_obj_feature_matching', -> Create features and their clusters then find individual similarity between product and shelf image
+'SIFT',
+ 'SURF',
+ 'ORB',
+ 'SSIM',  -> need images to be of same shape so not very helpful
+ 'template_matching', -> Uses two versions.  Scikit-image version uses "skimage.feature.peak_local_max" to filter noise
+ 'histogram_compare',
+ 'template_match_histograms', -> Find histogram of images and then use those as a template along with the original histogram difference criteria
+ 'scale_invariant_template_matching' -> Keep on decreasing the size of template until it mateches to all the products in the image. Lot of Manual tuning
+ ]
+ ```
+ 
 2. Using Deep Learning: Detectiing product using `Yolov5`
 
 
@@ -26,7 +40,7 @@ There are two main ways of doing this.
 
 Wasn't very effective. So I uesd deep Learning.
 
-## Deep Learning based Bounding Box
+## Deep Learning based Bounding Box: `YOLOv5`
 ```
 1. Get Bounding Boxes from a trained `YOLOv5`
 2. Crop each and every patch
