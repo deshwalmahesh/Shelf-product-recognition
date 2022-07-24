@@ -1,4 +1,4 @@
-# This projects different highlights different ways to recognise a product in the shelf
+# This project highlights different ways to recognise a product in the shelf
 See `Product_detection.ipynb` for the whole end to end process.
 
 # Approaches:
