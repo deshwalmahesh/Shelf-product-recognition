@@ -19,10 +19,10 @@ There are two main ways of doing this.
  ]
  ```
  
-2. Using Deep Learning: Detectiing product using `Yolov5`
+2. Using Deep Learning: Detecting product using `Yolov5`
 
 
-## Preprocessing: The given pdoduct image had floor in the background so:
+## Preprocessing: The given product image had floor in the background so:
 ```
 1. Used `U2Net` to segment product only to reduce effect of noise.
 2. Cropped the minimum boundign box.
