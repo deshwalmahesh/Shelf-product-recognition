@@ -30,30 +30,28 @@ There are two main ways of doing this.
 4. Resized the image keeping aspect ration same so that images has the biggest dimension (any of height or width) as `480P`
 ```
 
-## Traditional CV based Bounding Boxes
+## Finding Bounding Boxes 
+### Traditional CV based approaches
 ```
-1. Find features from the images using methods in `traditional_image_similarity.py` suc has `SIFT, SURF, histogram etc`
-2. Match the features (clusters), find features within a given threshold length`
-3. Get Bounding boxes
+1. Find features (clusters of features)  from the images using methods in `traditional_image_similarity.py` such has `SIFT, SURF etc`
+2. Get Bounding boxes based on threshold.
 ```
 ![result_1](https://user-images.githubusercontent.com/50293852/180609777-2ffdcc38-0f1a-4f6c-b05c-d51ea829ae51.png)
 
-Wasn't very effective. So I uesd deep Learning.
+Wasn't very effective. So I used deep Learning.
 
-## Deep Learning based Bounding Box: `YOLOv5`
+### Deep Learning based Bounding Box: `YOLOv5`
 ```
 1. Get Bounding Boxes from a trained `YOLOv5`
 2. Crop each and every patch
 ```
 ![Detection](https://user-images.githubusercontent.com/50293852/180609949-67b3cbf8-4edc-4c56-a82b-765d434f6bac.jpeg)
 
+
 ## Image Similarity
 
-Now you have 2 choices to choose from. Whether you use the aboce traditional methrods for feature matching or you use a pre trained model for image similarity.
+Now you have 2 choices to choose from. Whether you use the above traditional methrods for feature matching or you use a pre trained model for image similarity.
 
-1. **Traditional**: Get each patch and use any if the matching crireria from the above file `traditional_image_similarity.py`. It'll gice you a score in range `0-1` describing how similar the image patch is to the product given.
+1. **Traditional**: Get each patch and use any of the matching crireria from the above file `traditional_image_similarity.py`. It'll give you a score in range `0-1` describing how similar the image patch is to the product given.
 
-2. **Deep Learning** I used a `MobileNet` to get embeddings but the real problem is that the patches are so small. Some of the batches detected are of `8` pixels and `MiobileNet` dies not support less that `32`
-
-
-
+2. **Deep Learning** I used a `MobileNet` to get embeddings but the real problem is that the patches are so small. Some of the patches detected are of `8` pixels and `MobileNet` does not support less that `32`
