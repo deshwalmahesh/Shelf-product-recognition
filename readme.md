@@ -19,7 +19,7 @@ There are two main ways of doing this.
  ]
  ```
  
-2. Using Deep Learning: Detecting product using `Yolov5`
+2. Using Deep Learning: Detecting product using `Yolov5`. Weights [from here](https://github.com/shayanalibhatti/Retail-Store-Item-Detection-using-YOLOv5)
 
 
 ## Preprocessing: The given product image had floor in the background so:
